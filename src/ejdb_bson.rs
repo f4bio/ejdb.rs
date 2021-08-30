@@ -9,8 +9,9 @@
 use std::slice;
 
 use bson::oid;
-use bson::{self, DecoderResult, Document, EncoderResult};
+use bson::{self, Document};
 use ejdb_sys;
+use bson_crate::{EncoderResult, DecoderResult};
 
 pub struct EjdbBsonDocument(*mut ejdb_sys::bson);
 

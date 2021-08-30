@@ -840,7 +840,7 @@ where
         let hints = self.hints.borrow().as_bson();
 
         let mut query_doc = Vec::new();
-        bson::encode_document(&mut query_doc, query)?;
+        bson::encode_document(&mut query_doc, query).unwrap();
 
         let query =
             unsafe { ejdb_sys::ejdbcreatequery2(self.coll.db.0, query_doc.as_ptr() as *const _) };
@@ -861,7 +861,7 @@ where
 
         if !hints.is_empty() {
             query_doc.clear();
-            bson::encode_document(&mut query_doc, hints)?;
+            bson::encode_document(&mut query_doc, hints).unwrap();
 
             let new_query = unsafe {
                 ejdb_sys::ejdbqueryhints(self.coll.db.0, query.0, query_doc.as_ptr() as *const _)

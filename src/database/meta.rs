@@ -14,12 +14,13 @@ use std::result;
 use std::slice;
 use std::str::FromStr;
 
-use bson::{Bson, Document, ValueAccessError};
+use bson::{Bson, Document};
 use ejdb_sys;
 
 use super::Database;
 use ejdb_bson::EjdbBsonDocument;
 use Result;
+use bson_crate::ValueAccessError;
 
 impl Database {
     /// Loads and returns information about the database.
