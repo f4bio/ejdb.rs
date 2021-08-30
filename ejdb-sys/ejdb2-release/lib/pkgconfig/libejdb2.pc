@@ -1,0 +1,12 @@
+prefix=/usr/local
+exec_prefix=${prefix}/bin
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: ejdb2
+Description: Embeddable JSON database engine with network support (EJDB2).
+URL: http://ejdb.org
+Version: 2.61
+Libs: -L${libdir} -lejdb2
+Cflags: -I${includedir}
+
